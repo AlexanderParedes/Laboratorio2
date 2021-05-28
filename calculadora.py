@@ -20,3 +20,13 @@ class Calculadora:
         for i in range(val2):
             resultado = self.suma(resultado,val1)
         return resultado
+  #Operación Dividir
+    def dividir(self, n, d):
+        if (d <= 0 or n < 0):
+            raise ArithmeticError("No se aceptan valores negativos")
+        cociente = 0
+        residue = n
+        while residue >= d:
+            cociente = self.suma(cociente, 1)
+            residue = self.resta(residue, d)
+        return (cociente, residue)
